@@ -14,6 +14,8 @@
 		59ACF59C1BC44D4300867D81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59ACF59A1BC44D4300867D81 /* LaunchScreen.storyboard */; };
 		59ACF5A71BC44D4300867D81 /* TFLStatusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59ACF5A61BC44D4300867D81 /* TFLStatusTests.swift */; };
 		59ACF5B21BC44D4300867D81 /* TFLStatusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59ACF5B11BC44D4300867D81 /* TFLStatusUITests.swift */; };
+		59ACF5C01BC44FEB00867D81 /* FetchStatusTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59ACF5BF1BC44FEB00867D81 /* FetchStatusTask.swift */; settings = {ASSET_TAGS = (); }; };
+		59ACF5C21BC453FC00867D81 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59ACF5C11BC453FC00867D81 /* Status.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		59ACF5AD1BC44D4300867D81 /* TFLStatusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TFLStatusUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		59ACF5B11BC44D4300867D81 /* TFLStatusUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFLStatusUITests.swift; sourceTree = "<group>"; };
 		59ACF5B31BC44D4300867D81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		59ACF5BF1BC44FEB00867D81 /* FetchStatusTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchStatusTask.swift; sourceTree = "<group>"; };
+		59ACF5C11BC453FC00867D81 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,8 @@
 				59ACF5981BC44D4300867D81 /* Assets.xcassets */,
 				59ACF59A1BC44D4300867D81 /* LaunchScreen.storyboard */,
 				59ACF59D1BC44D4300867D81 /* Info.plist */,
+				59ACF5BF1BC44FEB00867D81 /* FetchStatusTask.swift */,
+				59ACF5C11BC453FC00867D81 /* Status.swift */,
 			);
 			path = TFLStatus;
 			sourceTree = "<group>";
@@ -256,7 +262,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				59ACF5941BC44D4300867D81 /* ViewController.swift in Sources */,
+				59ACF5C01BC44FEB00867D81 /* FetchStatusTask.swift in Sources */,
 				59ACF5921BC44D4300867D81 /* AppDelegate.swift in Sources */,
+				59ACF5C21BC453FC00867D81 /* Status.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
