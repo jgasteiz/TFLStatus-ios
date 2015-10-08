@@ -127,7 +127,6 @@
 				59E28B2D1BC70B5E00182B95 /* Arrival.swift */,
 				59ACF5C11BC453FC00867D81 /* Status.swift */,
 				59FA1E6C1BC64378009BF819 /* Station.swift */,
-				59E28B2B1BC7011500182B95 /* Settings.bundle */,
 			);
 			path = TFLStatus;
 			sourceTree = "<group>";
@@ -153,6 +152,7 @@
 		59FA1E691BC64335009BF819 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				59E28B2B1BC7011500182B95 /* Settings.bundle */,
 				59FA1E6A1BC64352009BF819 /* all_stations.json */,
 			);
 			name = Resources;
@@ -225,6 +225,7 @@
 				TargetAttributes = {
 					59ACF58D1BC44D4300867D81 = {
 						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = YE3SHNA22A;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
 								enabled = 1;
@@ -443,6 +444,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = TFLStatus/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.javiman.TFLStatus;
@@ -454,6 +456,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = TFLStatus/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.javiman.TFLStatus;

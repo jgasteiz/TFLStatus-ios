@@ -15,8 +15,6 @@
 			<string>station_id</string>
 			<key>DefaultValue</key>
 			<string></string>
-			<key>IsSecure</key>
-			<false/>
 			<key>KeyboardType</key>
 			<string>Alphabet</string>
 			<key>AutocapitalizationType</key>
