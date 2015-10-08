@@ -71,6 +71,19 @@ class ViewController: UIViewController {
                 textView.text = "\(textView.text)\(arrival.getSummary())\n"
             }
         }
+        
+        // Render stations, for fun
+        textView.text = "\(textView.text)\n\n\nAll stations\n\n"
+        let fetchStatusTask = FetchStatusTask()
+        var allStations: [Station] = fetchStatusTask.getStations()
+        
+        allStations = allStations.sort({$0.name < $1.name})
+        
+        for station in allStations {
+            textView.text = "\(textView.text)\(station.getDisplayName())\n"
+        }
+        
+        // Next step would be putting them on a map.
     }
     
     func onStatusLoadError() -> Void {
