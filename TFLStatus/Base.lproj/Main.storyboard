@@ -3,6 +3,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--TFL Status-->
@@ -18,35 +19,90 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zJT-hX-Vhx">
-                                <rect key="frame" x="20" y="0.0" width="560" height="592"/>
+                                <rect key="frame" x="20" y="79" width="560" height="513"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Station name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3u2-vU-Syw">
+                                <rect key="frame" x="20" y="50" width="560" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="zJT-hX-Vhx" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="JXp-4H-H7X"/>
-                            <constraint firstItem="zJT-hX-Vhx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="bv0-bt-DWJ"/>
-                            <constraint firstItem="zJT-hX-Vhx" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="hqt-zQ-UZT"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="zJT-hX-Vhx" secondAttribute="bottom" constant="8" id="umj-ZX-8jm"/>
+                            <constraint firstItem="zJT-hX-Vhx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="0Tq-wq-NLX"/>
+                            <constraint firstItem="zJT-hX-Vhx" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="64a-jg-mlF"/>
+                            <constraint firstItem="3u2-vU-Syw" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="BLa-Ed-A26"/>
+                            <constraint firstItem="3u2-vU-Syw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="E9K-RX-3B6"/>
+                            <constraint firstItem="zJT-hX-Vhx" firstAttribute="top" secondItem="3u2-vU-Syw" secondAttribute="bottom" constant="8" id="FhD-Y8-TE4"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="zJT-hX-Vhx" secondAttribute="bottom" constant="8" id="MjM-uc-kJP"/>
+                            <constraint firstItem="3u2-vU-Syw" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="qYe-jz-U5M"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="TFL Status" id="L1o-i4-yT6">
-                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="k9q-q4-G0s">
-                            <connections>
-                                <action selector="refetchArrivals:" destination="BYZ-38-t0r" id="TEU-ma-OZg"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="refresh" id="k9q-q4-G0s">
+                                <connections>
+                                    <action selector="refetchArrivals:" destination="BYZ-38-t0r" id="TEU-ma-OZg"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="search" id="END-kj-g4u">
+                                <connections>
+                                    <action selector="searchStation:" destination="BYZ-38-t0r" id="sWP-8l-tRS"/>
+                                    <segue destination="1Cg-nq-P95" kind="show" id="Daa-LI-4OA"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="stationName" destination="3u2-vU-Syw" id="Op7-fS-F8W"/>
                         <outlet property="textView" destination="zJT-hX-Vhx" id="jam-yL-pJs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1257" y="416"/>
+        </scene>
+        <!--Select a Station-->
+        <scene sceneID="clg-zv-7Zr">
+            <objects>
+                <viewController id="1Cg-nq-P95" customClass="MapViewController" customModule="TFLStatus" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="njG-SV-3Cx"/>
+                        <viewControllerLayoutGuide type="bottom" id="yTG-ZN-gdr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="19S-Ud-0fy">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="pZu-fn-zN4">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <animations/>
+                            </mapView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pZu-fn-zN4" firstAttribute="leading" secondItem="19S-Ud-0fy" secondAttribute="leadingMargin" constant="-20" id="3B1-to-yus"/>
+                            <constraint firstItem="yTG-ZN-gdr" firstAttribute="top" secondItem="pZu-fn-zN4" secondAttribute="bottom" id="DdM-Pl-RAX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pZu-fn-zN4" secondAttribute="trailing" constant="-20" id="HCE-V9-7LD"/>
+                            <constraint firstItem="pZu-fn-zN4" firstAttribute="top" secondItem="njG-SV-3Cx" secondAttribute="bottom" id="thC-UC-n46"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Select a Station" id="oqI-CJ-Wgb"/>
+                    <connections>
+                        <outlet property="mapView" destination="pZu-fn-zN4" id="ceV-Tg-GQC"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="showStatus" id="BQz-1m-3WI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c3z-mT-O4S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2079" y="416"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="s9T-sF-LUA">
@@ -68,4 +124,7 @@
             <point key="canvasLocation" x="445" y="416"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="BQz-1m-3WI"/>
+    </inferredMetricsTieBreakers>
 </document>
