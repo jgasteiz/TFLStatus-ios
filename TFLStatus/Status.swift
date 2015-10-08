@@ -8,28 +8,42 @@
 
 import Foundation
 
-class Status {
+class Status: NSObject {
     
     var stationName: String
     var lineName: String
-    var platformName: String
-    var timeToStation: Int
-    var direction: String
-    var currentLocation: String
-    var towards: String
+    var arrivals: [Arrival]
     
-    init(stationName: String, lineName: String, platformName: String, timeToStation: Int, direction: String, currentLocation: String, towards: String) {
+    init(stationName: String, lineName: String, arrivals: [Arrival]) {
         self.stationName = stationName
         self.lineName = lineName
-        self.platformName = platformName
-        self.timeToStation = timeToStation
-        self.direction = direction
-        self.currentLocation = currentLocation
-        self.towards = towards
+        self.arrivals = arrivals
     }
     
     func getSummary() -> String {
-        return "\(self.towards) - \(self.timeToStation / 60)"
+        var summary = ""
+        
+        // Reorder the arrivals by time to station.
+        self.arrivals = self.arrivals.sort({$0.timeToStation < $1.timeToStation})
+        
+        // Render inbound
+        for arrival in arrivals {
+            if arrival.direction == "inbound" {
+                summary = "\(summary)\(arrival.getSummary())\n"
+            }
+        }
+        
+        // Separation
+        summary = "\(summary)\n=========\n\n"
+        
+        // Render outbound
+        for arrival in arrivals {
+            if arrival.direction == "outbound" {
+                summary = "\(summary)\(arrival.getSummary())\n"
+            }
+        }
+        
+        return summary
     }
     
 }
