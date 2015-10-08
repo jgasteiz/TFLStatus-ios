@@ -16,6 +16,10 @@
 		59ACF5B21BC44D4300867D81 /* TFLStatusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59ACF5B11BC44D4300867D81 /* TFLStatusUITests.swift */; };
 		59ACF5C01BC44FEB00867D81 /* FetchStatusTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59ACF5BF1BC44FEB00867D81 /* FetchStatusTask.swift */; settings = {ASSET_TAGS = (); }; };
 		59ACF5C21BC453FC00867D81 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59ACF5C11BC453FC00867D81 /* Status.swift */; settings = {ASSET_TAGS = (); }; };
+		59E28B221BC6E00000182B95 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E28B211BC6E00000182B95 /* MapViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		59E28B281BC6F40900182B95 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59E28B271BC6F40900182B95 /* MapKit.framework */; };
+		59E28B2C1BC7011500182B95 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 59E28B2B1BC7011500182B95 /* Settings.bundle */; settings = {ASSET_TAGS = (); }; };
+		59E28B2E1BC70B5E00182B95 /* Arrival.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E28B2D1BC70B5E00182B95 /* Arrival.swift */; settings = {ASSET_TAGS = (); }; };
 		59FA1E6B1BC64352009BF819 /* all_stations.json in Resources */ = {isa = PBXBuildFile; fileRef = 59FA1E6A1BC64352009BF819 /* all_stations.json */; settings = {ASSET_TAGS = (); }; };
 		59FA1E6D1BC64378009BF819 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FA1E6C1BC64378009BF819 /* Station.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
@@ -53,6 +57,10 @@
 		59ACF5B31BC44D4300867D81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		59ACF5BF1BC44FEB00867D81 /* FetchStatusTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchStatusTask.swift; sourceTree = "<group>"; };
 		59ACF5C11BC453FC00867D81 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
+		59E28B211BC6E00000182B95 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		59E28B271BC6F40900182B95 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		59E28B2B1BC7011500182B95 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		59E28B2D1BC70B5E00182B95 /* Arrival.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Arrival.swift; path = ../Arrival.swift; sourceTree = "<group>"; };
 		59FA1E6A1BC64352009BF819 /* all_stations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = all_stations.json; sourceTree = "<group>"; };
 		59FA1E6C1BC64378009BF819 /* Station.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -62,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59E28B281BC6F40900182B95 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +94,7 @@
 		59ACF5851BC44D4300867D81 = {
 			isa = PBXGroup;
 			children = (
+				59E28B271BC6F40900182B95 /* MapKit.framework */,
 				59ACF5901BC44D4300867D81 /* TFLStatus */,
 				59ACF5A51BC44D4300867D81 /* TFLStatusTests */,
 				59ACF5B01BC44D4300867D81 /* TFLStatusUITests */,
@@ -107,14 +117,17 @@
 			children = (
 				59FA1E691BC64335009BF819 /* Resources */,
 				59ACF5911BC44D4300867D81 /* AppDelegate.swift */,
-				59ACF5931BC44D4300867D81 /* ViewController.swift */,
 				59ACF5951BC44D4300867D81 /* Main.storyboard */,
 				59ACF5981BC44D4300867D81 /* Assets.xcassets */,
 				59ACF59A1BC44D4300867D81 /* LaunchScreen.storyboard */,
 				59ACF59D1BC44D4300867D81 /* Info.plist */,
+				59ACF5931BC44D4300867D81 /* ViewController.swift */,
+				59E28B211BC6E00000182B95 /* MapViewController.swift */,
 				59ACF5BF1BC44FEB00867D81 /* FetchStatusTask.swift */,
+				59E28B2D1BC70B5E00182B95 /* Arrival.swift */,
 				59ACF5C11BC453FC00867D81 /* Status.swift */,
 				59FA1E6C1BC64378009BF819 /* Station.swift */,
+				59E28B2B1BC7011500182B95 /* Settings.bundle */,
 			);
 			path = TFLStatus;
 			sourceTree = "<group>";
@@ -212,6 +225,11 @@
 				TargetAttributes = {
 					59ACF58D1BC44D4300867D81 = {
 						CreatedOnToolsVersion = 7.0.1;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					59ACF5A11BC44D4300867D81 = {
 						CreatedOnToolsVersion = 7.0.1;
@@ -250,6 +268,7 @@
 			files = (
 				59ACF59C1BC44D4300867D81 /* LaunchScreen.storyboard in Resources */,
 				59ACF5991BC44D4300867D81 /* Assets.xcassets in Resources */,
+				59E28B2C1BC7011500182B95 /* Settings.bundle in Resources */,
 				59FA1E6B1BC64352009BF819 /* all_stations.json in Resources */,
 				59ACF5971BC44D4300867D81 /* Main.storyboard in Resources */,
 			);
@@ -277,7 +296,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				59ACF5941BC44D4300867D81 /* ViewController.swift in Sources */,
+				59E28B221BC6E00000182B95 /* MapViewController.swift in Sources */,
 				59FA1E6D1BC64378009BF819 /* Station.swift in Sources */,
+				59E28B2E1BC70B5E00182B95 /* Arrival.swift in Sources */,
 				59ACF5C01BC44FEB00867D81 /* FetchStatusTask.swift in Sources */,
 				59ACF5921BC44D4300867D81 /* AppDelegate.swift in Sources */,
 				59ACF5C21BC453FC00867D81 /* Status.swift in Sources */,

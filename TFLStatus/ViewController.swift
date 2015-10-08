@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     
     @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var stationName: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,14 +25,12 @@ class ViewController: UIViewController {
         activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: activityIndicator)
         
+        self.automaticallyAdjustsScrollViewInsets = false
+        self.textView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
+        
         self.fetchArrivals()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     @IBAction func refetchArrivals(sender: AnyObject) {
         self.fetchArrivals()
     }
@@ -39,51 +38,21 @@ class ViewController: UIViewController {
     func fetchArrivals() -> Void {
         activityIndicator.startAnimating()
         let fetchStatusTask = FetchStatusTask()
-        fetchStatusTask.getStationArrivals("940GZZLUHCL", onTaskDone: onStatusLoadSuccess, onTaskError: onStatusLoadError) // hardcode station id for now
+        
+        var stationId: String? = NSUserDefaults.standardUserDefaults().stringForKey("station_id")
+        if stationId == nil {
+            stationId = "940GZZLUHCL"
+        }
+        
+        fetchStatusTask.getStationArrivals(stationId!, onTaskDone: onStatusLoadSuccess, onTaskError: onStatusLoadError) // hardcode station id for now
     }
     
-    func onStatusLoadSuccess(var arrivals: [Status]) -> Void {
+    func onStatusLoadSuccess(status: Status) -> Void {
         activityIndicator.stopAnimating()
         
-        // TODO: the following lines are obviously temporary.
-        // Helper methods will be added to the Status class
-        // as well as a list of arrivals. Status will represent
-        // the status of a station rather than each of the
-        // expected arrivals, as it is now.
+        self.stationName.text = "\(status.stationName)\n\n"
         
-        textView.text = "Hendon Central Station\n\n"
-        
-        // Reorder the arrivals by time to station.
-        arrivals = arrivals.sort({$0.timeToStation < $1.timeToStation})
-        
-        // Render inbound
-        for arrival in arrivals {
-            if arrival.direction == "inbound" {
-                textView.text = "\(textView.text)\(arrival.getSummary())\n"
-            }
-        }
-        
-        textView.text = "\(textView.text)\n=========\n\n"
-        
-        // Render outbound
-        for arrival in arrivals {
-            if arrival.direction == "outbound" {
-                textView.text = "\(textView.text)\(arrival.getSummary())\n"
-            }
-        }
-        
-        // Render stations, for fun
-        textView.text = "\(textView.text)\n\n\nAll stations\n\n"
-        let fetchStatusTask = FetchStatusTask()
-        var allStations: [Station] = fetchStatusTask.getStations()
-        
-        allStations = allStations.sort({$0.name < $1.name})
-        
-        for station in allStations {
-            textView.text = "\(textView.text)\(station.getDisplayName())\n"
-        }
-        
-        // Next step would be putting them on a map.
+        self.textView.text = status.getSummary()
     }
     
     func onStatusLoadError() -> Void {
