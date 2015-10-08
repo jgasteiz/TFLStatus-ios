@@ -57,4 +57,8 @@ class FetchStatusTask {
         downloadTask.resume()
     }
     
+    func getStations() -> String {
+        return "TODO"
+    }
+    
 }

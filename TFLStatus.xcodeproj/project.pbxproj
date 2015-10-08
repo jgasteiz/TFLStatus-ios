@@ -16,6 +16,8 @@
 		59ACF5B21BC44D4300867D81 /* TFLStatusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59ACF5B11BC44D4300867D81 /* TFLStatusUITests.swift */; };
 		59ACF5C01BC44FEB00867D81 /* FetchStatusTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59ACF5BF1BC44FEB00867D81 /* FetchStatusTask.swift */; settings = {ASSET_TAGS = (); }; };
 		59ACF5C21BC453FC00867D81 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59ACF5C11BC453FC00867D81 /* Status.swift */; settings = {ASSET_TAGS = (); }; };
+		59FA1E6B1BC64352009BF819 /* all_stations.json in Resources */ = {isa = PBXBuildFile; fileRef = 59FA1E6A1BC64352009BF819 /* all_stations.json */; settings = {ASSET_TAGS = (); }; };
+		59FA1E6D1BC64378009BF819 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FA1E6C1BC64378009BF819 /* Station.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		59ACF5B31BC44D4300867D81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		59ACF5BF1BC44FEB00867D81 /* FetchStatusTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchStatusTask.swift; sourceTree = "<group>"; };
 		59ACF5C11BC453FC00867D81 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
+		59FA1E6A1BC64352009BF819 /* all_stations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = all_stations.json; sourceTree = "<group>"; };
+		59FA1E6C1BC64378009BF819 /* Station.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,7 @@
 		59ACF5901BC44D4300867D81 /* TFLStatus */ = {
 			isa = PBXGroup;
 			children = (
+				59FA1E691BC64335009BF819 /* Resources */,
 				59ACF5911BC44D4300867D81 /* AppDelegate.swift */,
 				59ACF5931BC44D4300867D81 /* ViewController.swift */,
 				59ACF5951BC44D4300867D81 /* Main.storyboard */,
@@ -109,6 +114,7 @@
 				59ACF59D1BC44D4300867D81 /* Info.plist */,
 				59ACF5BF1BC44FEB00867D81 /* FetchStatusTask.swift */,
 				59ACF5C11BC453FC00867D81 /* Status.swift */,
+				59FA1E6C1BC64378009BF819 /* Station.swift */,
 			);
 			path = TFLStatus;
 			sourceTree = "<group>";
@@ -129,6 +135,14 @@
 				59ACF5B31BC44D4300867D81 /* Info.plist */,
 			);
 			path = TFLStatusUITests;
+			sourceTree = "<group>";
+		};
+		59FA1E691BC64335009BF819 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				59FA1E6A1BC64352009BF819 /* all_stations.json */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,6 +250,7 @@
 			files = (
 				59ACF59C1BC44D4300867D81 /* LaunchScreen.storyboard in Resources */,
 				59ACF5991BC44D4300867D81 /* Assets.xcassets in Resources */,
+				59FA1E6B1BC64352009BF819 /* all_stations.json in Resources */,
 				59ACF5971BC44D4300867D81 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				59ACF5941BC44D4300867D81 /* ViewController.swift in Sources */,
+				59FA1E6D1BC64378009BF819 /* Station.swift in Sources */,
 				59ACF5C01BC44FEB00867D81 /* FetchStatusTask.swift in Sources */,
 				59ACF5921BC44D4300867D81 /* AppDelegate.swift in Sources */,
 				59ACF5C21BC453FC00867D81 /* Status.swift in Sources */,
@@ -491,6 +507,7 @@
 				59ACF5B81BC44D4300867D81 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		59ACF5B91BC44D4300867D81 /* Build configuration list for PBXNativeTarget "TFLStatusTests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +516,7 @@
 				59ACF5BB1BC44D4300867D81 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		59ACF5BC1BC44D4300867D81 /* Build configuration list for PBXNativeTarget "TFLStatusUITests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +525,7 @@
 				59ACF5BE1BC44D4300867D81 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
