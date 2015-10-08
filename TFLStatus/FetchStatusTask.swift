@@ -57,8 +57,27 @@ class FetchStatusTask {
         downloadTask.resume()
     }
     
-    func getStations() -> String {
-        return "TODO"
+    func getStations() -> [Station] {
+        var stations: [Station] = []
+        if let path = NSBundle.mainBundle().pathForResource("all_stations", ofType: "json") {
+            do {
+                let jsonData = try NSData(contentsOfURL: NSURL(fileURLWithPath: path), options: NSDataReadingOptions.DataReadingMappedIfSafe)
+                let stationsArray: NSArray = (try! NSJSONSerialization.JSONObjectWithData(jsonData, options: [])) as! NSArray
+                for stationDict in stationsArray {
+                    stations.append(Station(
+                        id: stationDict["id"] as! String,
+                        name: stationDict["name"] as! String,
+                        lat: stationDict["lat"] as! Double,
+                        lon: stationDict["lon"] as! Double
+                    ))
+                }
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+        } else {
+            print("Invalid filename/path.")
+        }
+        return stations
     }
     
 }
