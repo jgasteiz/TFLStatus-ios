@@ -6,25 +6,29 @@
 //  Copyright © 2015 Javi Manzano. All rights reserved.
 //
 
+import MapKit
 import Foundation
 
-class Station {
+class Station: NSObject, MKAnnotation {
     
     var id: String
     var name: String
-    var lat: Double
-    var lon: Double
+    let coordinate: CLLocationCoordinate2D
     
     init(id: String, name: String, lat: Double, lon: Double) {
         self.id = id
         self.name = name
-        self.lat = lat
-        self.lon = lon
+        self.coordinate = CLLocationCoordinate2D(latitude: lat, longitude: lon)
+        
+        super.init()
     }
     
-    func getDisplayName() -> String {
-        let stationName = self.name.stringByReplacingOccurrencesOfString(" Underground Station", withString: "")
-        return "\(stationName): \(self.lat), \(self.lon)"
+    var title: String? {
+        return self.name
+    }
+    
+    var subtitle: String? {
+        return self.id
     }
     
 }
