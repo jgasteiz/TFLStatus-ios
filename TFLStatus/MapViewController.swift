@@ -7,6 +7,7 @@
 //
 
 import CoreLocation
+import CoreData
 import MapKit
 import UIKit
 
@@ -63,7 +64,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                 view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
                 view.canShowCallout = true
                 view.calloutOffset = CGPoint(x: -5, y: 5)
-                view.rightCalloutAccessoryView = UIButton(type: UIButtonType.DetailDisclosure)
+                view.rightCalloutAccessoryView = UIButton(type: UIButtonType.ContactAdd)
                 
             }
             return view
@@ -74,10 +75,22 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         let station: Station = view.annotation as! Station
         
-        var appDefaults = Dictionary<String, AnyObject>()
-        appDefaults["station_id"] = station.id
-        NSUserDefaults.standardUserDefaults().registerDefaults(appDefaults)
-        NSUserDefaults.standardUserDefaults().synchronize()
+        // Create new entity
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let moc = appDelegate.managedObjectContext
+        
+        let entity = NSEntityDescription.entityForName("FavoriteStation", inManagedObjectContext: moc)
+        let favoriteStation = FavoriteStation(entity:entity!, insertIntoManagedObjectContext: moc)
+        
+        favoriteStation.setValue(station.id, forKey: "id")
+        favoriteStation.setValue(station.name, forKey: "name")
+        
+        // save our entity
+        do {
+            try moc.save()
+        } catch {
+            fatalError("Failure to save context: \(error)")
+        }
         
         performSegueWithIdentifier("showStatus", sender: self)
     }

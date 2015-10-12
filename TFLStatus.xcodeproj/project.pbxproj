@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		591E85CB1BCC40E800B1BFEF /* StatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591E85CA1BCC40E800B1BFEF /* StatusCell.swift */; settings = {ASSET_TAGS = (); }; };
 		59ACF5921BC44D4300867D81 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59ACF5911BC44D4300867D81 /* AppDelegate.swift */; };
-		59ACF5941BC44D4300867D81 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59ACF5931BC44D4300867D81 /* ViewController.swift */; };
+		59ACF5941BC44D4300867D81 /* StatusController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59ACF5931BC44D4300867D81 /* StatusController.swift */; };
 		59ACF5971BC44D4300867D81 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59ACF5951BC44D4300867D81 /* Main.storyboard */; };
 		59ACF5991BC44D4300867D81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59ACF5981BC44D4300867D81 /* Assets.xcassets */; };
 		59ACF59C1BC44D4300867D81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59ACF59A1BC44D4300867D81 /* LaunchScreen.storyboard */; };
@@ -16,9 +17,11 @@
 		59ACF5B21BC44D4300867D81 /* TFLStatusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59ACF5B11BC44D4300867D81 /* TFLStatusUITests.swift */; };
 		59ACF5C01BC44FEB00867D81 /* FetchStatusTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59ACF5BF1BC44FEB00867D81 /* FetchStatusTask.swift */; settings = {ASSET_TAGS = (); }; };
 		59ACF5C21BC453FC00867D81 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59ACF5C11BC453FC00867D81 /* Status.swift */; settings = {ASSET_TAGS = (); }; };
+		59DC1ED81BC990EB002AE446 /* FavoriteStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DC1ED71BC990EA002AE446 /* FavoriteStation.swift */; settings = {ASSET_TAGS = (); }; };
+		59DC1F191BC9A13D002AE446 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59DC1F181BC9A13D002AE446 /* CoreData.framework */; };
+		59DC1F1C1BC9A1BF002AE446 /* TFLStatus.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 59DC1F1A1BC9A1BF002AE446 /* TFLStatus.xcdatamodeld */; settings = {ASSET_TAGS = (); }; };
 		59E28B221BC6E00000182B95 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E28B211BC6E00000182B95 /* MapViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		59E28B281BC6F40900182B95 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59E28B271BC6F40900182B95 /* MapKit.framework */; };
-		59E28B2C1BC7011500182B95 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 59E28B2B1BC7011500182B95 /* Settings.bundle */; settings = {ASSET_TAGS = (); }; };
 		59E28B2E1BC70B5E00182B95 /* Arrival.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E28B2D1BC70B5E00182B95 /* Arrival.swift */; settings = {ASSET_TAGS = (); }; };
 		59FA1E6B1BC64352009BF819 /* all_stations.json in Resources */ = {isa = PBXBuildFile; fileRef = 59FA1E6A1BC64352009BF819 /* all_stations.json */; settings = {ASSET_TAGS = (); }; };
 		59FA1E6D1BC64378009BF819 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FA1E6C1BC64378009BF819 /* Station.swift */; settings = {ASSET_TAGS = (); }; };
@@ -42,9 +45,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		591E85CA1BCC40E800B1BFEF /* StatusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusCell.swift; sourceTree = "<group>"; };
 		59ACF58E1BC44D4300867D81 /* TFLStatus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TFLStatus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59ACF5911BC44D4300867D81 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		59ACF5931BC44D4300867D81 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		59ACF5931BC44D4300867D81 /* StatusController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusController.swift; sourceTree = "<group>"; };
 		59ACF5961BC44D4300867D81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		59ACF5981BC44D4300867D81 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		59ACF59B1BC44D4300867D81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -57,9 +61,11 @@
 		59ACF5B31BC44D4300867D81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		59ACF5BF1BC44FEB00867D81 /* FetchStatusTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchStatusTask.swift; sourceTree = "<group>"; };
 		59ACF5C11BC453FC00867D81 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
+		59DC1ED71BC990EA002AE446 /* FavoriteStation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteStation.swift; sourceTree = "<group>"; };
+		59DC1F181BC9A13D002AE446 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		59DC1F1B1BC9A1BF002AE446 /* TFLStatus.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TFLStatus.xcdatamodel; sourceTree = "<group>"; };
 		59E28B211BC6E00000182B95 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		59E28B271BC6F40900182B95 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		59E28B2B1BC7011500182B95 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		59E28B2D1BC70B5E00182B95 /* Arrival.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Arrival.swift; path = ../Arrival.swift; sourceTree = "<group>"; };
 		59FA1E6A1BC64352009BF819 /* all_stations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = all_stations.json; sourceTree = "<group>"; };
 		59FA1E6C1BC64378009BF819 /* Station.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
@@ -70,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59DC1F191BC9A13D002AE446 /* CoreData.framework in Frameworks */,
 				59E28B281BC6F40900182B95 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -94,6 +101,7 @@
 		59ACF5851BC44D4300867D81 = {
 			isa = PBXGroup;
 			children = (
+				59DC1F181BC9A13D002AE446 /* CoreData.framework */,
 				59E28B271BC6F40900182B95 /* MapKit.framework */,
 				59ACF5901BC44D4300867D81 /* TFLStatus */,
 				59ACF5A51BC44D4300867D81 /* TFLStatusTests */,
@@ -121,12 +129,14 @@
 				59ACF5981BC44D4300867D81 /* Assets.xcassets */,
 				59ACF59A1BC44D4300867D81 /* LaunchScreen.storyboard */,
 				59ACF59D1BC44D4300867D81 /* Info.plist */,
-				59ACF5931BC44D4300867D81 /* ViewController.swift */,
+				59ACF5931BC44D4300867D81 /* StatusController.swift */,
 				59E28B211BC6E00000182B95 /* MapViewController.swift */,
 				59ACF5BF1BC44FEB00867D81 /* FetchStatusTask.swift */,
 				59E28B2D1BC70B5E00182B95 /* Arrival.swift */,
 				59ACF5C11BC453FC00867D81 /* Status.swift */,
 				59FA1E6C1BC64378009BF819 /* Station.swift */,
+				59DC1ED71BC990EA002AE446 /* FavoriteStation.swift */,
+				591E85CA1BCC40E800B1BFEF /* StatusCell.swift */,
 			);
 			path = TFLStatus;
 			sourceTree = "<group>";
@@ -152,8 +162,8 @@
 		59FA1E691BC64335009BF819 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				59E28B2B1BC7011500182B95 /* Settings.bundle */,
 				59FA1E6A1BC64352009BF819 /* all_stations.json */,
+				59DC1F1A1BC9A1BF002AE446 /* TFLStatus.xcdatamodeld */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -269,7 +279,6 @@
 			files = (
 				59ACF59C1BC44D4300867D81 /* LaunchScreen.storyboard in Resources */,
 				59ACF5991BC44D4300867D81 /* Assets.xcassets in Resources */,
-				59E28B2C1BC7011500182B95 /* Settings.bundle in Resources */,
 				59FA1E6B1BC64352009BF819 /* all_stations.json in Resources */,
 				59ACF5971BC44D4300867D81 /* Main.storyboard in Resources */,
 			);
@@ -296,9 +305,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				59ACF5941BC44D4300867D81 /* ViewController.swift in Sources */,
+				59ACF5941BC44D4300867D81 /* StatusController.swift in Sources */,
 				59E28B221BC6E00000182B95 /* MapViewController.swift in Sources */,
 				59FA1E6D1BC64378009BF819 /* Station.swift in Sources */,
+				59DC1ED81BC990EB002AE446 /* FavoriteStation.swift in Sources */,
+				591E85CB1BCC40E800B1BFEF /* StatusCell.swift in Sources */,
+				59DC1F1C1BC9A1BF002AE446 /* TFLStatus.xcdatamodeld in Sources */,
 				59E28B2E1BC70B5E00182B95 /* Arrival.swift in Sources */,
 				59ACF5C01BC44FEB00867D81 /* FetchStatusTask.swift in Sources */,
 				59ACF5921BC44D4300867D81 /* AppDelegate.swift in Sources */,
@@ -552,6 +564,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		59DC1F1A1BC9A1BF002AE446 /* TFLStatus.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				59DC1F1B1BC9A1BF002AE446 /* TFLStatus.xcdatamodel */,
+			);
+			currentVersion = 59DC1F1B1BC9A1BF002AE446 /* TFLStatus.xcdatamodel */;
+			path = TFLStatus.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 59ACF5861BC44D4300867D81 /* Project object */;
 }

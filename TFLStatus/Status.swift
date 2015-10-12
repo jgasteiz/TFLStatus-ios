@@ -7,43 +7,24 @@
 //
 
 import Foundation
+import UIKit
 
 class Status: NSObject {
     
     var stationName: String
-    var lineName: String
     var arrivals: [Arrival]
     
-    init(stationName: String, lineName: String, arrivals: [Arrival]) {
+    init(stationName: String, arrivals: [Arrival]) {
         self.stationName = stationName
-        self.lineName = lineName
         self.arrivals = arrivals
     }
     
-    func getSummary() -> String {
-        var summary = ""
-        
-        // Reorder the arrivals by time to station.
-        self.arrivals = self.arrivals.sort({$0.timeToStation < $1.timeToStation})
-        
-        // Render inbound
-        for arrival in arrivals {
-            if arrival.direction == "inbound" {
-                summary = "\(summary)\(arrival.getSummary())\n"
-            }
-        }
-        
-        // Separation
-        summary = "\(summary)\n=========\n\n"
-        
-        // Render outbound
-        for arrival in arrivals {
-            if arrival.direction == "outbound" {
-                summary = "\(summary)\(arrival.getSummary())\n"
-            }
-        }
-        
-        return summary
+    func getStationName() -> String {
+        return self.stationName.stringByReplacingOccurrencesOfString(" Underground Station", withString: "")
+    }
+    
+    func getArrivals() -> [Arrival] {
+        return self.arrivals.sort({$0.timeToStation < $1.timeToStation})
     }
     
 }

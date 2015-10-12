@@ -14,13 +14,13 @@ class FetchStatusTask {
     }
     
     // Get arrivals for a given station
-    func getStationArrivals(stationId: String, onTaskDone: (Status) -> Void, onTaskError: () -> Void) {
+    func getStationArrivals(stationId: String, stationName: String, onTaskDone: (Status) -> Void, onTaskError: () -> Void) {
         let fetchStatusURL = self.getFetchStationArrivalsURL(stationId)
-        self.fetchStationArrivals(fetchStatusURL, onTaskDone: onTaskDone, onTaskError: onTaskError)
+        self.fetchStationArrivals(fetchStatusURL, stationName: stationName, onTaskDone: onTaskDone, onTaskError: onTaskError)
     }
     
     // Fetch a single story
-    func fetchStationArrivals(fetchStatusURL: NSURL, onTaskDone: (status: Status) -> Void, onTaskError: () -> Void) -> Void {
+    func fetchStationArrivals(fetchStatusURL: NSURL, stationName: String, onTaskDone: (status: Status) -> Void, onTaskError: () -> Void) -> Void {
         let sharedSession = NSURLSession.sharedSession()
         let downloadTask: NSURLSessionDownloadTask = sharedSession.downloadTaskWithURL(fetchStatusURL, completionHandler: { (location: NSURL?, response: NSURLResponse?, error: NSError?) -> Void in
             
@@ -33,17 +33,16 @@ class FetchStatusTask {
                 var arrivals: [Arrival] = []
                 for arrivalDict in arrivalsArray {
                     arrivals.append(Arrival(
-                        platformName: arrivalDict["platformName"] as! String,
-                        timeToStation: arrivalDict["timeToStation"] as! Int,
-                        direction: arrivalDict["direction"] as! String,
-                        currentLocation: arrivalDict["currentLocation"] as! String,
-                        towards: arrivalDict["towards"] as! String
+                        platformName: arrivalDict["platformName"] as? String,
+                        timeToStation: arrivalDict["timeToStation"] as? Int,
+                        direction: arrivalDict["direction"] as? String,
+                        currentLocation: arrivalDict["currentLocation"] as? String,
+                        towards: arrivalDict["towards"] as? String
                     ))
                 }
                 
                 let status = Status(
-                    stationName: arrivalsArray[0]["stationName"] as! String,
-                    lineName: arrivalsArray[0]["lineName"] as! String,
+                    stationName: stationName,
                     arrivals: arrivals
                 )
                 
